@@ -1,0 +1,128 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+/* 3D Card Effect */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.card-3d:hover {
+  transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Parallax Effect */
+.parallax {
+  transform: translateZ(0);
+  transition: transform 0.3s ease;
+}
+
+.parallax:hover {
+  transform: translateZ(50px);
+}
+
+/* Smooth Gradient Animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.gradient-animate {
+  background: linear-gradient(270deg, #113E21, #1a5c31);
+  background-size: 200% 200%;
+  animation: gradientFlow 8s ease infinite;
+}
+
+/* 3D Button Effect */
+.button-3d {
+  transform: translateZ(0);
+  transition: all 0.2s ease;
+}
+
+.button-3d:hover {
+  transform: translateY(-2px) translateZ(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-3d:active {
+  transform: translateY(1px) translateZ(5px);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Perspective Container */
+.perspective-container {
+  perspective: 1000px;
+}
+
+/* Horizontal scroll animation */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll-horizontal {
+  animation: scroll-horizontal 15s linear infinite;
+}
+
+.animate-scroll-horizontal:hover {
+  animation-play-state: paused;
+}
+
+/* Ticker scroll animation */
+@keyframes tickerScroll {
+  from { transform: translateX(0%); }
+  to { transform: translateX(-100%); }
+}
+
+.pl-full {
+  padding-left: 100%;
+  animation: tickerScroll 30s linear infinite;
+}
+/* Hover pause for tickers */
+.animate-scroll-horizontal:hover {
+  animation-play-state: paused;
+}

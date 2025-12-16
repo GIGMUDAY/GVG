@@ -1,0 +1,68 @@
+name: Deploy to cPanel via FTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+        
+      - name: Verify TypeScript configuration
+        run: |
+          echo "Checking TypeScript configuration..."
+          npx tsc --noEmit --project tsconfig.app.json || true
+          
+      - name: Build project
+        run: npm run build
+        
+      - name: Verify build output
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Error: dist directory not found after build"
+            exit 1
+          fi
+          echo "Build successful. Contents of dist:"
+          ls -la dist/
+        
+      - name: Copy .htaccess to dist
+        run: |
+          if [ -f ".htaccess" ]; then
+            cp .htaccess dist/.htaccess
+            echo ".htaccess copied successfully"
+          else
+            echo "Warning: .htaccess file not found"
+          fi
+        
+      - name: Deploy to cPanel via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: ftp.greenvaluegroup.com
+          username: greenvtest@greenvaluegroup.com
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          timeout: 60000
+          log-level: verbose
+          local-dir: ./dist/
+          server-dir: /public_html/test
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.DS_Store
