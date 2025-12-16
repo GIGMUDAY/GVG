@@ -91,7 +91,7 @@ const AnimatedTestimonials: React.FC<AnimatedTestimonialsProps> = ({
       <div className="relative grid grid-cols-1 gap-12 md:gap-20 md:grid-cols-2">
         {/* Left Side - Image Stack */}
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-80 w-full overflow-hidden md:overflow-visible">
             {testimonials.map((testimonial, index) => {
               const active = isActive(index);
               const rotation = active ? 0 : randomRotateY(index);

@@ -40,14 +40,14 @@ const Team: React.FC = () => {
           textColor="text-white"
         />
         
-        <div className="mt-12" style={{ height: '600px', position: 'relative' }}>
-          <ChromaGrid 
+        <div className="mt-12 relative">
+          <ChromaGrid
             items={teamMembers}
             radius={300}
             damping={0.45}
             fadeOut={0.6}
             ease="power3.out"
-            className="justify-center"
+            className="justify-center h-auto md:min-h-[520px] lg:min-h-[600px]"
           />
         </div>
       </div>
@@ -56,4 +56,3 @@ const Team: React.FC = () => {
 };
 
 export default Team;
-
