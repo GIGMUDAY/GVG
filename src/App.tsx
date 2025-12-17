@@ -17,6 +17,8 @@ import Footer from './components/Footer';
 import SilkBackground from './components/SilkBackground';
 import './styles/animations.css';
 
+const SHOW_TESTIMONIALS = false;
+
 function App() {
   useEffect(() => {
     // Set dark theme as default on initial load
@@ -76,7 +78,7 @@ function App() {
           <Sustainability />
           <Partners />
           <Team />
-          <Testimonials />
+          {SHOW_TESTIMONIALS && <Testimonials />}
           <Tokenomics />
           <Community />
           <FAQ />

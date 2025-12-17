@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
+const SHOW_TESTIMONIALS = false;
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -62,6 +64,9 @@ const Navbar: React.FC = () => {
     { label: 'Community', href: '#community' },
     { label: 'FAQ', href: '#faq' },
   ];
+  const visibleMenuItems = SHOW_TESTIMONIALS
+    ? menuItems
+    : menuItems.filter((item) => item.href !== '#testimonials');
 
   return (
     <nav 
@@ -127,7 +132,7 @@ const Navbar: React.FC = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <nav className="flex flex-col space-y-4">
-            {menuItems.map((item, index) => (
+            {visibleMenuItems.map((item, index) => (
               <a
                 key={index}
                 href={item.href}
