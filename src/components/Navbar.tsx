@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
+import ShimmerButton from './ShimmerButton';
 
 const SHOW_TESTIMONIALS = false;
 
@@ -112,8 +113,19 @@ const Navbar: React.FC = () => {
             </a>
           </div>
           
-          {/* Theme Toggle - Right Side */}
-          <div className="flex items-center gap-1 sm:gap-2 md:gap-3">
+          {/* Theme Toggle and Whitepaper - Right Side */}
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
+            <ShimmerButton
+              href="https://gig-invest.org/gig-token-whitepaperoverview"
+              target="_blank"
+              rel="noopener noreferrer"
+              shimmerSize="2px"
+              shimmerDuration="2.5s"
+              background="linear-gradient(90deg, #10b981, #0ea5e9)"
+              className="px-4 py-2 text-xs sm:text-sm font-semibold border-white/20 shadow-lg"
+            >
+              <span className="relative z-10 text-white">Whitepaper</span>
+            </ShimmerButton>
             <ThemeToggle />
           </div>
         </div>
@@ -142,16 +154,6 @@ const Navbar: React.FC = () => {
                 {item.label}
               </a>
             ))}
-            <div className="pt-4 mt-4 border-t border-white/20">
-              <a
-                href="https://gig-invest.org/gig-token-whitepaperoverview"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block text-white text-lg sm:text-xl font-medium hover:text-green-400 transition-colors duration-200 py-2"
-              >
-                Whitepaper →
-              </a>
-            </div>
           </nav>
         </div>
       </div>

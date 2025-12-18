@@ -8,15 +8,15 @@ const Introduction: React.FC = () => {
     <section id="about" className="relative py-20 bg-slate-900/80 dark:bg-black/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
-          title="GVG Token: Smart, Sustainable, Secure" 
-          subtitle="GVG Token (Green Value Group Token) is more than just a digital currency; it's a utility token that powers a new wave of sustainable development. Built on the efficient Polygon (Ethereum Layer-2) blockchain, we ensure low transaction costs and high scalability."
+          title="About Green Value Group (GVG)" 
+          subtitle="Green Value Group (GVG) is a venture-building and project aggregation platform focused on developing execution-ready, ESG-aligned initiatives in emerging markets, with an initial focus on Ethiopia and diaspora-linked capital pathways. GVG brings together technical execution capability, governance frameworks, and compliant capital readiness to bridge the gap between ideas, funding, and real-world delivery."
           centered={true}
           textColor="text-white"
         />
         
         <div className="mt-12">
           <div className="text-center mb-12">
-            <h3 className="text-xl md:text-2xl font-bold text-white px-4">Our Foundation is Built On</h3>
+            <h3 className="text-xl md:text-2xl font-bold text-white px-4">Our approach prioritizes:</h3>
           </div>
           
           <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -27,9 +27,9 @@ const Introduction: React.FC = () => {
                   <Search className="h-6 w-6 text-brand-green" />
                 </div>
               </div>
-              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Unprecedented Transparency</h4>
+              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Real Economy Projects</h4>
               <p className="mt-2 text-sm md:text-base text-white/80 text-center">
-                Every transaction and fund allocation is recorded on the blockchain, offering verifiable accountability.
+                Real economy initiatives with measurable outcomes and disciplined execution.
               </p>
             </div>
             
@@ -40,9 +40,9 @@ const Introduction: React.FC = () => {
                   <Zap className="h-6 w-6 text-brand-green" />
                 </div>
               </div>
-              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Enhanced Efficiency</h4>
+              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Compliance-First Design</h4>
               <p className="mt-2 text-sm md:text-base text-white/80 text-center">
-                By streamlining processes and reducing intermediaries, we lower costs and accelerate investment.
+                Aligned with evolving capital market regulations to stay investor-ready.
               </p>
             </div>
             
@@ -53,52 +53,46 @@ const Introduction: React.FC = () => {
                   <Sprout className="h-6 w-6 text-brand-green" />
                 </div>
               </div>
-              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Deep Commitment to Sustainability</h4>
+              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Transparency & Accountability</h4>
               <p className="mt-2 text-sm md:text-base text-white/80 text-center">
-                We champion businesses that align with fair trade, local job creation, and environmental responsibility.
+                Transparency, accountability, and long-term value creation in every engagement.
               </p>
             </div>
             
-            {/* Feature 4 */}
-            <div className="bg-black/30 backdrop-blur-lg border border-white/20 rounded-lg p-4 md:p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-green">
-              <div className="flex justify-center">
-                <div className="rounded-full bg-black/40 backdrop-blur-md border border-brand-green/30 p-3">
-                  <Globe className="h-6 w-6 text-brand-green" />
-                </div>
-              </div>
-              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Global Accessibility</h4>
-              <p className="mt-2 text-sm md:text-base text-white/80 text-center">
-                GVG Token breaks down traditional barriers, making it easier for individuals and institutions worldwide to contribute to and benefit from Ethiopia's growth.
-              </p>
-            </div>
-            
-            {/* Feature 5 */}
-            <div className="bg-black/30 backdrop-blur-lg border border-white/20 rounded-lg p-4 md:p-6 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:border-brand-green">
-              <div className="flex justify-center">
-                <div className="rounded-full bg-black/40 backdrop-blur-md border border-brand-green/30 p-3">
-                  <Scale className="h-6 w-6 text-brand-green" />
-                </div>
-              </div>
-              <h4 className="mt-4 text-lg md:text-xl font-semibold text-center text-white">Fair Economic Participation</h4>
-              <p className="mt-2 text-sm md:text-base text-white/80 text-center">
-                We are dedicated to creating a level playing field, ensuring equitable opportunities for all stakeholders.
-              </p>
-            </div>
-            
-            {/* Visual element */}
-            <ShimmerButton
-              href="https://t.me/greeninvestmentgroup"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shadow-2xl p-4 md:p-6 flex items-center justify-center"
-              shimmerSize="2px"
-            >
-              <div className="text-center relative z-10">
-                <div className="text-2xl md:text-3xl font-bold mb-2 text-white">Join Us</div>
-                <p className="text-sm md:text-base text-white">Be part of Ethiopia's sustainable future</p>
-              </div>
-            </ShimmerButton>
           </div>
+
+          <p className="mt-10 text-center text-xs sm:text-sm text-white/70 max-w-4xl mx-auto">
+            GVG operates independently and does not act as a licensed investment advisor or capital market intermediary.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <h3 className="text-xl md:text-2xl font-bold text-white">OUR APPROACH</h3>
+          <p className="text-sm md:text-base text-white/75 mt-2">GVG is built on five operating principles.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          {[
+            { title: 'Execution First', desc: 'Projects must be deliverable, not theoretical.' },
+            { title: 'Governance by Design', desc: 'Clear roles, milestones, and accountability.' },
+            { title: 'Compliance Before Scale', desc: 'Regulation is a constraint we respect, not bypass.' },
+            { title: 'Measured Impact', desc: 'ESG and outcomes are tracked, not assumed.' },
+            { title: 'Long-Term Value', desc: 'Sustainable growth over short-term speculation.' },
+          ].map((item, idx) => (
+            <div
+              key={item.title}
+              className="bg-black/30 backdrop-blur-lg border border-white/15 rounded-xl p-5 md:p-6 shadow-md flex gap-3 items-start"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-brand-green/30 bg-black/40 text-brand-green font-bold">
+                {idx + 1}
+              </div>
+              <div>
+                <h4 className="text-base md:text-lg font-semibold text-white">{item.title}</h4>
+                <p className="mt-2 text-sm md:text-base text-white/80">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -7,6 +7,10 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   base: './', // This ensures assets are loaded correctly on cPanel
+  build: {
+    outDir: '.next', // Output build into .next instead of dist for hosting alignment
+    emptyOutDir: true,
+  },
   server: {
     host: '127.0.0.1',
     port: 5173,

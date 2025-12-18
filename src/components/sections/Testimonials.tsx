@@ -1,6 +1,33 @@
-import React from 'react';
-import AnimatedTestimonials, { Testimonial } from '../AnimatedTestimonials';
+import React, { PropsWithChildren } from 'react';
 import SectionHeading from '../SectionHeading';
+
+type Testimonial = {
+  quote: string;
+  name: string;
+  designation: string;
+  image: string;
+};
+
+const Marquee: React.FC<PropsWithChildren<{ speed?: number }>> = ({ children, speed = 22 }) => {
+  const items = React.Children.toArray(children);
+
+  return (
+    <div className="relative overflow-hidden">
+      <div
+        className="flex items-stretch gap-4 md:gap-6 marquee-track hover:[animation-play-state:paused]"
+        style={{ '--marquee-duration': `${speed}s` } as React.CSSProperties}
+      >
+        {[...items, ...items].map((child, idx) => (
+          <div key={idx} className="flex-shrink-0">
+            {child}
+          </div>
+        ))}
+      </div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-900/90 via-slate-900/40 to-transparent dark:from-black/90 dark:via-black/40" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-900/90 via-slate-900/40 to-transparent dark:from-black/90 dark:via-black/40" />
+    </div>
+  );
+};
 
 const Testimonials: React.FC = () => {
   const testimonials: Testimonial[] = [
@@ -57,7 +84,27 @@ const Testimonials: React.FC = () => {
         />
 
         <div className="mt-12">
-          <AnimatedTestimonials testimonials={testimonials} autoPlay={true} interval={5000} />
+          <Marquee>
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={`${testimonial.name}-${index}`}
+                className="min-w-[260px] sm:min-w-[320px] max-w-[360px] bg-black/30 backdrop-blur-lg border border-white/15 rounded-2xl p-6 md:p-8 shadow-lg h-full flex flex-col justify-between"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="h-12 w-12 rounded-full object-cover border border-white/20"
+                  />
+                  <div>
+                    <p className="text-white font-semibold text-sm md:text-base">{testimonial.name}</p>
+                    <p className="text-white/70 text-xs md:text-sm">{testimonial.designation}</p>
+                  </div>
+                </div>
+                <p className="text-white/85 text-sm md:text-base leading-relaxed">"{testimonial.quote}"</p>
+              </div>
+            ))}
+          </Marquee>
         </div>
       </div>
     </section>
@@ -65,4 +112,3 @@ const Testimonials: React.FC = () => {
 };
 
 export default Testimonials;
-

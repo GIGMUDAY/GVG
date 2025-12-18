@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/sections/Hero';
 import Challenge from './components/sections/Challenge';
 import Introduction from './components/sections/Introduction';
+import WhyGVG from './components/sections/WhyGVG';
 import Features from './components/sections/Features';
 import Advantages from './components/sections/Advantages';
 import Sustainability from './components/sections/Sustainability';
@@ -73,6 +74,7 @@ function App() {
           <Hero />
           <Challenge />
           <Introduction />
+          <WhyGVG />
           <Features />
           <Advantages />
           <Sustainability />

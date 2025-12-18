@@ -17,7 +17,7 @@ const Partners: React.FC = () => {
       title: 'Pavepath Design'
     },
     {
-      src: '/Etraincon',
+      src: '/Etraincon.jpg',
       alt: 'Etraincon',
       href: 'https://etraincon.com',
       title: 'Etraincon'

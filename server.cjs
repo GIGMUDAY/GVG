@@ -1,10 +1,7 @@
-import http from 'http';
-import path from 'path';
-import { promises as fs } from 'fs';
-import { fileURLToPath } from 'url';
+const http = require('http');
+const path = require('path');
+const fs = require('fs').promises;
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const distDir = path.join(__dirname, '.next');
 const publicDir = path.join(__dirname, 'public');
 const port = process.env.PORT || 3000;
@@ -64,7 +61,7 @@ const server = http.createServer(async (req, res) => {
   const normalizedPath = path.normalize(urlPath);
   const safePath = normalizedPath
     .replace(/^(\.\.[/\\])+/, '')
-    .replace(/^[/\\]+/, '');
+    .replace(/^[/\\]+/, ''); // strip leading slashes so we stay within distDir
 
   // Try .next first
   let filePath = path.join(distDir, safePath);

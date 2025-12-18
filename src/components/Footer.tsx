@@ -98,16 +98,7 @@ const Footer: React.FC = () => {
               </span>
             </div>
             <p className="text-xs md:text-sm text-white/80 mb-2">
-              Connecting Ethiopian diaspora investors with sustainable local
-              businesses.
-            </p>
-            <p className="text-xs md:text-sm text-white/80">
-              <a
-                href="mailto:contact@greeninvestmentgroup.com"
-                className="hover:text-brand-green transition-colors"
-              >
-                contact@greeninvestmentgroups.com
-              </a>
+              GVG is not a licensed financial institution or investment advisor.
             </p>
           </div>
 
@@ -160,21 +151,12 @@ const Footer: React.FC = () => {
             </h3>
             <div className="space-y-2">
               <div className="flex items-center">
-                <Phone className="h-3 w-3 text-brand-green mr-2" />
-                <a
-                  href="https://api.whatsapp.com/send?phone=14085053734"
-                  className="text-white/80 hover:text-brand-green transition-colors text-xs"
-                >
-                  +1 (408) 505-3734
-                </a>
-              </div>
-              <div className="flex items-center">
                 <MessageSquare className="h-3 w-3 text-brand-green mr-2" />
                 <a
-                  href="https://t.me/Greeninvestmentgroups"
+                  href="mailto:info@greenvaluegroup.com"
                   className="text-white/80 hover:text-brand-green transition-colors text-xs"
                 >
-                  Telegram Support
+                  info@greenvaluegroup.com
                 </a>
               </div>
             </div>
