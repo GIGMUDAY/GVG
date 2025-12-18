@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const outDir = process.env.BUILD_OUT_DIR || 'dist'; // Default Vite output for Vercel; override per host via env
+
 export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
@@ -8,7 +10,7 @@ export default defineConfig({
   },
   base: './', // This ensures assets are loaded correctly on cPanel
   build: {
-    outDir: '.next', // Output build into .next instead of dist for hosting alignment
+    outDir,
     emptyOutDir: true,
   },
   server: {
